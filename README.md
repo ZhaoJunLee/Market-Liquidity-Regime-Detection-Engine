@@ -7,7 +7,7 @@ Case study: cryptocurrency markets (Binance trade data)
 Applied here to digital asset markets, though the methodology is applicable to equity and other financial markets.
 
 **Author:** Lee Zhao Jun  
-**Repository:** [crypto-liquidity-regime-shift-detection-engine](https://github.com/ZhaoJunLee/Crypto-Liquidity-Regime-Shift-Detection-Engine/tree/main)  
+**Repository:** [market-liquidity-regime-detection-engine](https://github.com/ZhaoJunLee/Crypto-Liquidity-Regime-Shift-Detection-Engine/tree/main)  
 **Last Updated:** March 2026
 
 ---
