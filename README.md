@@ -1,18 +1,34 @@
-# Crypto Liquidity Regime Detection
-Detect early crypto liquidity regime shifts using **trade-level microstructure signals, volume imbalances and DuckDB-powered analytics.**
+# Market Liquidity Regime Detection
+Data-driven framework for detecting liquidity regime shifts in financial markets
+using **trade-level microstructure signals, SQL pipelines (DuckDB), and statistical analysis.**
+
+Case study: cryptocurrency markets (Binance trade data)
+
+Applied here to digital asset markets, though the methodology is applicable to equity and other financial markets.
 
 **Author:** Lee Zhao Jun  
 **Repository:** [crypto-liquidity-regime-shift-detection-engine](https://github.com/ZhaoJunLee/Crypto-Liquidity-Regime-Shift-Detection-Engine/tree/main)  
-**Last Updated:** January 2026
+**Last Updated:** March 2026
 
 ---
 
 ## Project Overview
 
-This project implements a **framework for detecting directional liquidity regimes in cryptocurrency markets** using **[open-source aggregated trade data from Binance](https://data.binance.vision/?prefix=data/spot/daily/aggTrades/)**. 
-It focuses on identifying **buy/sell imbalance pressure and volume bursts** that may *precede* directional price movement.  
+This project builds a data pipeline and analytical framework to detect liquidity
+regime shifts in cryptocurrency markets using trade-level market microstructure data.
 
-The methodology is inspired by professional trading research on **market microstructure and liquidity efficiency**, and is designed to help analysts or quants spot **liquidity-driven events** that can precede short-term market trends.
+Using DuckDB-powered SQL pipelines and Python analytics, the system processes [raw
+Binance trade data](https://data.binance.vision/?prefix=data/spot/daily/aggTrades/) to construct market structure indicators such as directional
+volume imbalance, volume bursts, and liquidity efficiency.
+
+The objective is to identify periods of abnormal liquidity pressure that may
+precede short-term price movements.
+
+While implemented on digital assets, the methodology is inspired by institutional
+market microstructure research. It incorporates metrics such as the Amihud
+Illiquidity Proxy and volume imbalance, widely used to assess price impact and
+liquidity conditions in equity markets, particularly in less liquid segments
+such as mid-cap utilities and emerging market stocks.
 
 Key objectives:
 - Build **OHLCV bars** from raw trade data.
@@ -22,6 +38,29 @@ Key objectives:
   - Liquidity Efficiency (`illiquidity` – Amihud proxy)
 - Detect **buy/sell pressure events** based on cumulative imbalance and volume pressure.
 - Visualize events alongside price to validate signals.
+
+---
+
+## Example Insights from Exploratory Analysis
+
+Preliminary analysis of trade-level Binance data reveals several
+interesting liquidity dynamics:
+
+• **Directional imbalance clusters** often precede short-term price
+momentum, suggesting sustained aggressive order flow can signal
+liquidity-driven price discovery.
+
+• **Volume bursts without directional imbalance** frequently coincide
+with absorption events, where large liquidity providers offset
+incoming market orders.
+
+• **Signal reliability varies by liquidity regime**, with stronger
+predictive power during volatility expansions compared to
+low-liquidity consolidation periods.
+
+These findings highlight how trade-level market microstructure signals
+can help analysts identify structural liquidity shifts rather than
+random volatility.
 
 ---
 
